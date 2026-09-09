@@ -203,6 +203,12 @@
         {%- endif -%}
       </div>
       <small class="footer-ecosystem"><a href="{{ ui.ecosystem_url }}">{{ ui.ecosystem_label }}</a></small>
+      {%- comment -%}
+        El disclaimer sigue al USO de la marca, no a la página que lo explica: «ASVAB» aparece
+        en el título, el H1 y el dominio de todas las páginas, así que el aviso vive donde
+        también viven ellas — este footer, del que cuelgan las 14.
+      {%- endcomment -%}
+      <small class="footer-disclaimer">{{ ui.disclaimer }}</small>
     </div>
   </footer>
 </body>

@@ -74,10 +74,12 @@ ui_strings:
     skip_to_main: "Skip to main content"
     ecosystem_label: "A KhassinX app"
     ecosystem_url: "https://khassinx.com"
+    disclaimer: "ASVAB Coach is an independent educational tool. NOT affiliated with, endorsed by, or connected to the U.S. Department of Defense or any military branch. ASVAB® is a registered trademark of the U.S. Department of Defense, used nominatively."
   es:
     skip_to_main: "Saltar al contenido principal"
     ecosystem_label: "Una app de KhassinX"
     ecosystem_url: "https://khassinx.com/es/"
+    disclaimer: "ASVAB Coach es una herramienta educativa independiente. NO está afiliada, respaldada ni conectada al Departamento de Defensa de EE.UU. ni a ninguna rama militar. ASVAB® es marca registrada del Departamento de Defensa de EE.UU., usada de manera nominativa."
 
 # Jekyll config
 markdown: kramdown
