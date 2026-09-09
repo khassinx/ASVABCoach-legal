@@ -1,11 +1,12 @@
 ---
 layout: prose
+description: "ASVAB Coach no recopila nada: sin SDKs de analytics, sin cuenta, sin IA en la nube. Qué guarda la app, dónde vive y cómo borrarlo."
 title: Política de Privacidad
 permalink: /es/legal/privacy/
 lang: es
 canonical_en: /legal/privacy/
 canonical_es: /es/legal/privacy/
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # Política de Privacidad — ASVAB Coach
@@ -53,6 +54,8 @@ Todo lo que haces en ASVAB Coach se guarda **localmente en tu dispositivo** y (o
 | Tu selección de rama militar (Army, Navy, etc.) | `UserDefaults` + iCloud KV |
 | Tarjetas de repetición espaciada (qué preguntas fallaste, cuándo revisarlas) | `UserDefaults` + iCloud KV |
 | Resultados del diagnóstico | `UserDefaults` + iCloud KV |
+| Momentum — tu nivel de meta diaria, los créditos de hoy, los días de gracia acumulados, si el anillo se muestra, y **tu fecha de examen si la cargaste** (es opcional; si la dejás vacía, Momentum es un hábito diario y nada más) | `UserDefaults` + iCloud KV |
+| Cuáles de los 17 logros conseguiste | `UserDefaults` + iCloud KV |
 
 La sincronización iCloud usa **tu** Cuenta de Apple. Nunca vemos, accedemos ni tenemos forma de recuperar estos datos. Apple los cifra en tránsito y en reposo. Si borras la app y deshabilitas iCloud para ella, los datos desaparecen. No hay copia en ningún servidor controlado por nosotros.
 
@@ -95,6 +98,27 @@ Lo único que todavía llega a internet en tu nombre es un enlace que **tú** to
 En los dos casos la app le pide al sistema que abra el enlace y se hace a un lado: de ahí en
 adelante quien se conecta es tu navegador, exactamente como si hubieras tecleado la dirección tú.
 Nada se abre en segundo plano, y nada se abre sin un toque.
+
+## Compartir — dos pantallas, y sólo cuando tú lo pides
+
+La app no comparte nada por su cuenta. Hay dos pantallas que pueden entregarle algo a la hoja de
+compartir estándar de Apple, y sólo porque tú lo pediste:
+
+- La **tarjeta para el reclutador**: un resumen en texto simple de tu propia preparación — la rama
+  que elegiste y su mínimo de AFQT, tu estimado de AFQT del diagnóstico, tu mejor puntaje de Sprint
+  y tus días totales de estudio. Se arma en tu dispositivo, con datos que ya estaban ahí.
+- El **resumen de estudio**: un PDF que la app genera en tu dispositivo a partir de la guía.
+
+La hoja de compartir es de Apple, corre en tu dispositivo y **tú** eliges el destino: Mensajes,
+Mail, Archivos, imprimir, AirDrop, lo que quieras. La app nunca elige por ti, nunca comparte en
+segundo plano y nunca guarda ni recibe una copia. Lo que envías llega a donde lo enviaste y a
+ningún otro lado — a nosotros nadie nos avisa que compartiste, y no nos llega nada.
+
+Esta sección faltaba en la versión 1.5 de esta política, publicada el 2026-09-05, y en la 1.4
+faltaba a medias: la 1.5 se quedó con la mitad de «los enlaces que tocas» y dejó afuera la mitad de
+compartir. Lo decimos en vez de agregar la sección en silencio, por la misma razón por la que el
+resto de este documento nombra sus propios huecos — una omisión que hace ver a la app más privada
+de lo que es, es de los errores que hay que señalar, no sólo corregir.
 
 ## Compras dentro de la app
 
@@ -170,11 +194,11 @@ También mantienes control total a través de los mecanismos de Apple:
 
 En la página de ASVAB Coach en el App Store declaramos **"Datos no recopilados"** en todas las categorías. Eso se verifica contra el manifiesto `PrivacyInfo.xcprivacy` dentro de la app (`NSPrivacyTracking: false`, `NSPrivacyCollectedDataTypes` vacío) y contra el código mismo: cero SDKs de terceros de cualquier tipo, y las únicas conexiones de red que la app abre por su cuenta son Apple StoreKit y el almacenamiento clave-valor de iCloud, que lleva tu progreso entre tus propios dispositivos bajo tu propia cuenta de Apple y que nosotros no podemos leer nunca. El tutor de IA es Apple Intelligence on-device y no hace ninguna llamada de red.
 
-Hasta la versión 3.3.3 esta sección cubría además una búsqueda web opcional que le entregaba a Safari lo que escribías, como una búsqueda de Google. **Esa pantalla ahora busca en tu dispositivo y no abre ninguna conexión de red**, así que ya no hay nada que aclarar aparte. Apple define "recopilar" como transmitir datos fuera del dispositivo **de un modo en que el desarrollador o sus socios puedan acceder a ellos**; los enlaces que tocas siguen abriéndose en tu navegador, y esos tampoco los recibimos. Los seguimos describiendo completos más arriba, porque mereces saber a dónde van tus palabras, no sólo quién tiene permitido leerlas.
+Hasta la versión 3.3.3 esta sección cubría además una búsqueda web opcional que le entregaba a Safari lo que escribías, como una búsqueda de Google. **Esa pantalla ahora busca en tu dispositivo y no abre ninguna conexión de red**, así que ya no hay nada que aclarar aparte. Apple define "recopilar" como transmitir datos fuera del dispositivo **de un modo en que el desarrollador o sus socios puedan acceder a ellos**; los enlaces que tocas siguen abriéndose en tu navegador, y lo que le entregas a la hoja de compartir sigue yendo a donde tú lo mandes — ni lo uno ni lo otro nos llega. Los seguimos describiendo completos más arriba, porque mereces saber a dónde van tus palabras, no sólo quién tiene permitido leerlas.
 
 ## Cambios a esta política
 
-Si alguna vez modificamos materialmente nuestras prácticas de datos, actualizaremos este documento con una nueva fecha de vigencia y publicaremos un aviso dentro de la app. Al día de esta revisión (2026-09-05), no hay cambios previstos porque genuinamente no recopilamos datos y nuestro modelo de negocio (pago único, sin publicidad) no se beneficia de recopilarlos.
+Si alguna vez modificamos materialmente nuestras prácticas de datos, actualizaremos este documento con una nueva fecha de vigencia y publicaremos un aviso dentro de la app. Al día de esta revisión (2026-09-06), no hay cambios previstos porque genuinamente no recopilamos datos y nuestro modelo de negocio (pago único, sin publicidad) no se beneficia de recopilarlos.
 
 ## Jurisdicción
 
@@ -193,7 +217,25 @@ Procuramos responder dentro de 7 días hábiles.
 
 ---
 
-*Última actualización: 2026-09-05 · Versión 1.5*
+*Última actualización: 2026-09-06 · Versión 1.6*
+
+*Qué cambió en la 1.6 — una sección que existía en la 1.4 no sobrevivió a la 1.5.* La sección
+«Los enlaces que tocas y lo que decides compartir» cubría dos cosas; la 1.5 metió la mitad de los
+enlaces dentro de «Búsqueda» y perdió la mitad de compartir en el camino. Y la app sí comparte
+cuando se lo pides: la tarjeta para el reclutador y el resumen de estudio abren los dos la hoja de
+compartir de Apple. Una política que omite una salida de datos se equivoca en la dirección
+favorable, que es la que este documento ya tuvo que corregir dos veces. Vuelve, como sección
+propia.
+
+*También en la 1.6 — «Dónde viven tus datos» enumeraba cuatro cosas y la app guarda seis.* Momentum
+no estaba en esa tabla: ni el nivel de meta diaria, ni los créditos del día, ni los días de gracia
+acumulados, ni cuáles de los 17 logros conseguiste, ni **la fecha de tu examen, si la cargaste**.
+Todo eso vive en `UserDefaults` con espejo en iCloud, igual que las cuatro filas que ya estaban —
+nada nuevo nos llega, y nada de la app cambió. Lo que estaba mal era la lista. La fecha del examen
+merece nombrarse aparte: es lo único que la app guarda que es un hecho de tu vida y no un registro
+de cómo estudiás, y una tabla que la omitía hacía parecer que esta app tiene menos tuyo del que
+tiene. Ésa es la dirección favorable, que es en la que este documento no tiene permitido
+equivocarse.
 
 *Qué cambió en la 1.5 — la app dejó de hacer algo, y este documento tardó tres versiones
 en decirlo.* Hasta la 3.3.3 la pantalla de Búsqueda le entregaba a Safari lo que escribías, como una
