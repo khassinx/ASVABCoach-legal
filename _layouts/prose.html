@@ -2,9 +2,52 @@
 layout: base
 ---
 
+{%- comment -%}
+  El <h1> lo pone el CUERPO en markdown (`# ...`), no este layout: emitir los dos
+  daba DOS <h1> por página en las seis páginas de prosa, y quien navega por
+  encabezados con lector de pantalla encontraba dos títulos casi idénticos.
+  NORMA-UI-UX W-1.6(b), medido el 7-sep-2026.
+{%- endcomment -%}
+
+{%- assign es = false -%}
+{% if page.lang == 'es' %}{% assign es = true %}{% endif %}
+
 <article class="container container-narrow prose" style="padding-top: var(--space-3xl); padding-bottom: var(--space-3xl);">
-  {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
-  {% if page.updated %}<p class="text-tertiary"><small>Last updated: {{ page.updated }}</small></p>{% endif %}
+  {% if page.updated %}<p class="text-tertiary"><small>{% if es %}Última actualización:{% else %}Last updated:{% endif %} {{ page.updated }}</small></p>{% endif %}
 
   {{ content }}
 </article>
+
+{%- comment -%}
+  W-5.3 — las páginas legales cuelgan de /legal/ (o /es/legal/) y sin esto el
+  resultado de búsqueda muestra la URL cruda en vez de la ruta.
+  El índice de la sección no lleva miga: sería un solo escalón.
+{%- endcomment -%}
+{% unless page.url == '/legal/' or page.url == '/es/legal/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{% if es %}Inicio{% else %}Home{% endif %}",
+      "item": "{{ site.url }}{% if es %}/es/{% else %}/{% endif %}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Legal",
+      "item": "{{ site.url }}{% if es %}/es/legal/{% else %}/legal/{% endif %}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endunless %}

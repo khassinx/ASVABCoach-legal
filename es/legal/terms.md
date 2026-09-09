@@ -1,5 +1,6 @@
 ---
 layout: prose
+description: "Términos de Uso de ASVAB Coach: licencia, desbloqueo único, sin garantías sobre ningún puntaje del ASVAB y cómo se resuelven las disputas."
 title: Términos de Uso
 permalink: /es/legal/terms/
 lang: es

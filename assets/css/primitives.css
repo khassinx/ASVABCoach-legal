@@ -127,6 +127,10 @@ code {
   padding: 2px 6px;
   border-radius: var(--radius-s);
   font-size: 0.92em;
+  /* Un identificador sin espacios no tiene dónde cortar y empuja la página entera:
+     `com.khassinx.asvabcoach.fullaccess` mide 329 px en un viewport de 320.
+     Medido el 7-sep-2026 en /legal/terms/. NORMA-UI-UX W-3.1. */
+  overflow-wrap: anywhere;
 }
 
 pre code {
@@ -316,12 +320,12 @@ pre code {
 
 .btn-primary {
   background: var(--khassinx-accent);
-  color: #FFFFFF;
+  color: var(--khassinx-on-accent, #FFFFFF);
 }
 .btn-primary:hover {
   background: var(--khassinx-accent-strong);
   text-decoration: none;
-  color: #FFFFFF;
+  color: var(--khassinx-on-accent, #FFFFFF);
   transform: translateY(-1px);
 }
 
@@ -433,6 +437,7 @@ pre code {
 
 .site-footer nav {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
 }
 
@@ -507,8 +512,16 @@ pre code {
   font-style: italic;
 }
 
+/* La tabla ancha scrollea DENTRO de sí misma; la página nunca en horizontal.
+   Medido el 7-sep-2026: la tabla «dónde vive tu data» de la política mide 369 px
+   y a 320 px CSS empujaba la página entera 74 px hacia la derecha — con el pie ya
+   arreglado. `width: 100%` no la achica porque su contenido no entra.
+   NORMA-UI-UX W-3.1. */
 .prose table {
-  width: 100%;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
   border-collapse: collapse;
   margin: var(--space-md) 0;
   font-size: var(--fs-small);

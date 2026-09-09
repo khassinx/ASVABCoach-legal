@@ -112,4 +112,26 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Contact — EN -->
+  <url>
+    <loc>https://asvab.khassinx.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asvab.khassinx.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://asvab.khassinx.com/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asvab.khassinx.com/contact/"/>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Contact — ES -->
+  <url>
+    <loc>https://asvab.khassinx.com/es/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asvab.khassinx.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://asvab.khassinx.com/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://asvab.khassinx.com/contact/"/>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

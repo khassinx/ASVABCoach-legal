@@ -1,6 +1,7 @@
 ---
 layout: prose
-title: ASVAB Coach — Legal
+description: "Privacy Policy and Terms of Use for ASVAB Coach, by KHASSINX LLC. Zero tracking, no account, nothing to sell."
+title: Legal — Privacy & Terms
 permalink: /legal/
 lang: en
 canonical_en: /legal/

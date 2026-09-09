@@ -1,5 +1,6 @@
 ---
 layout: prose
+description: "Terms of Use for ASVAB Coach: licence, one-time unlock, no guarantees of any ASVAB score, and how disputes are handled."
 title: Terms of Use
 permalink: /legal/terms/
 lang: en

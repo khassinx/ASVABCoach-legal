@@ -1,5 +1,6 @@
 ---
 layout: prose
+description: "ASVAB Coach collects nothing: no analytics SDKs, no account, no cloud AI. What the app stores, where it lives, and how to erase it."
 title: Privacy Policy
 permalink: /legal/privacy/
 lang: en
@@ -10,7 +11,7 @@ redirect_from:
   - /PRIVACY_POLICY/
   - /privacy
   - /privacy/
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # Privacy Policy — ASVAB Coach
@@ -58,6 +59,8 @@ Everything you do in ASVAB Coach is stored **locally on your device** and (optio
 | Your branch selection (Army, Navy, etc.) | `UserDefaults` + iCloud KV |
 | Spaced-repetition cards (which questions you've missed, when to review) | `UserDefaults` + iCloud KV |
 | Diagnostic results | `UserDefaults` + iCloud KV |
+| Momentum — your daily goal level, credits earned today, banked grace days, whether the ring is shown, and **your exam date if you set one** (optional; leave it empty and Momentum is a plain daily habit) | `UserDefaults` + iCloud KV |
+| Which of the 17 achievements you have earned | `UserDefaults` + iCloud KV |
 
 iCloud sync uses **your** Apple Account. We never see, access, or have any way to retrieve this data. It is encrypted in transit and at rest by Apple. If you delete the app and disable iCloud for it, the data is gone. There is no copy on any server we control.
 
@@ -99,6 +102,27 @@ The one thing that still reaches the internet on your behalf is a link **you** t
 In both cases the app asks the system to open the link and steps out: from there your browser is
 doing the connecting, exactly as if you had typed the address yourself. Nothing is opened in the
 background, and nothing is opened without a tap.
+
+## Sharing — two screens, and only when you tap
+
+Nothing in the app shares anything on its own. Two screens can hand something to the standard
+Apple share sheet, and only because you asked for it:
+
+- The **recruiter card** — a plain-text summary of your own prep: the branch you picked and its
+  AFQT minimum, your diagnostic AFQT estimate, your best Sprint score, and your total study days.
+  It is generated on your device from data that was already on your device.
+- The **cheat sheet** — a PDF the app builds on your device from the study guide.
+
+The share sheet is Apple's, it runs on your device, and **you** pick the destination: Messages,
+Mail, Files, print, AirDrop, whatever you choose. The app never picks one for you, never shares in
+the background, and never keeps or receives a copy. What you send goes where you sent it, and
+nowhere else — we are not told that you shared, and nothing reaches us.
+
+This section was missing from version 1.5 of this policy, published 2026-09-05, and from 1.4 it was
+only half-missing: 1.5 kept the "links you tap" half and dropped the sharing half. We are saying so
+rather than adding the section quietly, for the same reason the rest of this document names its own
+gaps — an omission that makes the app look more private than it is, is the kind of error that has
+to be pointed at, not just fixed.
 
 ## In-App Purchases
 
@@ -158,11 +182,11 @@ Because we hold no data about you, most such requests are moot: there is nothing
 
 In the App Store listing, ASVAB Coach declares **"Data Not Collected"** in every category. That is verified against the in-app `PrivacyInfo.xcprivacy` manifest (`NSPrivacyTracking: false`, empty `NSPrivacyCollectedDataTypes`) and against the code itself: zero third-party SDKs of any kind, and the only network connections the app opens on its own are Apple StoreKit and iCloud key-value storage, which carries your progress between your own devices under your own Apple Account and which we can never read. The AI tutor is on-device Apple Intelligence and makes no network calls.
 
-Until version 3.3.3 this section also covered an optional web search that handed what you typed to Safari as a Google search. **That screen now searches on your device and opens no network connection at all**, so there is nothing left to carve out. Apple defines "collect" as transmitting data off the device **in a way the developer or its partners can access**; the links you tap still open in your browser, and we never receive those either. We keep describing them in full above anyway, because you deserve to know where your words go, not only who is allowed to read them.
+Until version 3.3.3 this section also covered an optional web search that handed what you typed to Safari as a Google search. **That screen now searches on your device and opens no network connection at all**, so there is nothing left to carve out. Apple defines "collect" as transmitting data off the device **in a way the developer or its partners can access**; the links you tap still open in your browser, and what you hand to the share sheet still goes wherever you send it — we never receive either one. We keep describing both in full above anyway, because you deserve to know where your words go, not only who is allowed to read them.
 
 ## Changes to this policy
 
-If we ever materially change our data practices, we will update this document with a new effective date and post a notice in the app. As of this revision (2026-09-05), no change is planned because we genuinely do not collect data and we have no business model that benefits from collecting it (one-time purchase, no advertising).
+If we ever materially change our data practices, we will update this document with a new effective date and post a notice in the app. As of this revision (2026-09-06), no change is planned because we genuinely do not collect data and we have no business model that benefits from collecting it (one-time purchase, no advertising).
 
 ## Jurisdiction
 
@@ -181,7 +205,24 @@ We aim to respond within 7 business days.
 
 ---
 
-*Last updated: 2026-09-05 · Version 1.5*
+*Last updated: 2026-09-06 · Version 1.6*
+
+*What changed in 1.6 — a section that existed in 1.4 did not survive into 1.5.* The old section
+"Links you tap, and things you choose to share" covered two things; 1.5 folded the links half into
+"Search" and lost the sharing half on the way. Meanwhile the app does share when you ask it to: the
+recruiter card and the cheat sheet both open Apple's share sheet. A policy that omits an outbound
+path is wrong in the flattering direction, which is the one this document has already had to
+correct twice. It is back, as its own section.
+
+*Also in 1.6 — "Where your data lives" listed four things and the app stores six.* Momentum was
+missing from that table entirely: the daily goal level, the credits earned today, the banked grace
+days, which of the 17 achievements you have earned, and **the exam date, if you set one**. All of
+it lives in `UserDefaults` with an iCloud key-value mirror, exactly like the four rows that were
+already there — nothing new reaches us, and nothing about the app changed. What was wrong was the
+list. The exam date is worth naming on its own: it is the only thing the app keeps that is a fact
+about your life rather than a record of your studying, and a table that omitted it made this app
+look like it holds less of you than it does. That is the flattering direction, which is the one
+this document does not get to err in.
 
 *What changed in 1.5 — the app stopped doing something, and this document was three
 versions late in saying so.* Up to 3.3.3 the Search screen handed what you typed to Safari as a
